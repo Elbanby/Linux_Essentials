@@ -4,7 +4,7 @@
 These are some of the commands from the linux essential training for
 the LPI linux certification. I am not pursuing the certification as of now. However, I am studying the material for my personal development.
 
-Here I am not covering all the material/commands taught, as I have previous experience with Linux. Hence I am only gonna be including few things like extra flags that I have just learnt about, that are interesting to me.
+Here I am not covering all the material/commands taught. I have previous experience with Linux, hence, I am only gonna be including a few things like extra flags that I have just learnt about, and find interesting.
 
 
 # Commands starts here. Happy learning!
