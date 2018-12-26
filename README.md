@@ -2,7 +2,7 @@
 
 ## About
 These are some of the commands from the linux essential training for
-the LPI linux certification. I am not pursuing the certification as of now. However, I am studying the material regardless for my personal development.
+the LPI linux certification. I am not pursuing the certification as of now. However, I am studying the material for my personal development.
 
 Here I am not covering all the material/commands taught, as I have previous experience with Linux. Hence I am only gonna be including few things like extra flags that I have just learnt about, that are interesting to me.
 
