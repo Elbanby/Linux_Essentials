@@ -238,3 +238,10 @@ Shows space available in the desk.
 
 `ls dev/`
 Any <sda[0..9]> will mean there is a hard-drive attached.
+
+
+## SSH 
+
+~/.ssh/id_rsa
+
+`ssh-keygen -p` reset your ssh password 
