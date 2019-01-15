@@ -73,6 +73,9 @@ Show where a command lives
 Searches the manual for the command
 
 N.B: when on the man pages and you would like to search by a keyword. Click '/<searchKeyword>' then click ENTER then use letter 'n' to go for next occurrence.
+  
+`mkdir path/{dir1,dir2}`
+This will create dir1 and dir2 on the path you specify. Note that there are no spaces allowed. 
 
 ## Archiving and/or Compression
 
