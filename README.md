@@ -243,8 +243,69 @@ Shows space available in the desk.
 Any <sda[0..9]> will mean there is a hard-drive attached.
 
 
-## SSH 
+## SSH Keys
 
 ~/.ssh/id_rsa
 
 `ssh-keygen -p` reset your ssh password 
+
+# Chrooted env Demo 
+
+1- Create the dir that you would like to chroot. 
+
+`mkdir /usr/user1`
+
+2- Create the lib folder for that user 
+
+`mkdir /usr/user1/{bin,lib64}`
+
+3- Copy the command you want the user to be able to execute 
+
+`cp /usr/bin/ls /usr/user1/bin`
+
+4- Get the shared libraries required by each program
+
+`ldd /bin/bash`
+
+5- Move all the libraries specifed by step 4 output to /usr/user1/lib64 
+
+6- Now lets chroot it! This will put us inside the chrooted directory. Which will make that path act likes a root
+
+`chroot /usr/user1 /bin/bash`
+
+## Chrooted ssh enviroment demo (very basic intro)
+
+This will create a chrooted ssh env for user. 
+
+1- Create a group for users to share 
+
+`groupadd controlledEnv`
+
+2- Create the user(s) that will enable the ssh for 
+
+`useradd -g controlledEnv JaiedUserName`
+
+3- Open the ssh config file (Use whatever editor you perfer. I am using vim!)
+
+`vim /etc/ssh/sshd_config`
+
+4- Add the following to the sshd_config file at the bottom (for simplicity)
+
+```
+Match group controlledEnv
+      ChrootDirectory /usr/user1
+      X11Forwarding no 
+      AllowTCPForwarding no
+```
+
+5- Restart your sshd service
+
+`systemctl restart sshd`
+
+6- Give your user a password 
+
+`passwd JaiedUserName`
+
+7- to test ssh using the username and password
+
+`ssh JaiedUserName@<ip here>`
