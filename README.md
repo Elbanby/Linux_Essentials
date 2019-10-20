@@ -309,3 +309,16 @@ Match group controlledEnv
 7- to test ssh using the username and password
 
 `ssh JaiedUserName@<ip here>`
+
+
+# Space and usage 
+
+To profile your root system and sort them 
+`du -h / | sort -rh | head -10`
+
+To show human readble space usage of a devive 
+`df -H /dev/<name>`
+
+To see all the block storage 
+`lsblk`
+
