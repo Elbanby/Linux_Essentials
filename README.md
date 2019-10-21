@@ -311,7 +311,7 @@ Match group controlledEnv
 `ssh JaiedUserName@<ip here>`
 
 
-# Space and usage 
+## Space and usage 
 
 To profile your root system and sort them 
 `du -h / | sort -rh | head -10`
@@ -321,4 +321,71 @@ To show human readble space usage of a devive
 
 To see all the block storage 
 `lsblk`
+
+## Systemd 
+
+To get the current release of Systemd
+`systemctl --version`
+
+To get boot process duration
+`systemd-analyze`
+ 
+To get the time spent by each task during the boot process
+`systemd-analyze blame`
+
+To get all systemd units
+`systemctl list-units`
+
+To get all systemd services
+`systemctl list-units | grep .service`
+
+To get a service status
+`systemctl status <service-name.service>`
+
+N.B: you need sudo to minapulate services
+
+To disable a service
+`sudo systemctl disable <service-name.service>`
+
+To enable a service
+`sudo systemctl enable <service-name.service>`
+
+To stop a service 
+`sudo systemctl stop <service-name>`
+
+List services that failed when starting system
+`systemctl --failed`
+
+To restart a service
+`sudo systemctl restart <service-name>`
+
+To check if a service is running 
+`systemctl is-enabled <service-name>`
+
+To reboot the system 
+`systemctl reboot`
+
+To shutdown the system 
+`systemctl poweroff`
+
+To suspend machine to ram 
+`systemctl suspend`
+
+To get the boot chain
+`systemd-analyze critical-chain`
+ 
+ To get the boot chain of a specific service 
+`systemd-analyze critical-chain <service-name>`
+
+
+## journalctl 
+
+To see all logs
+`journalctl`
+
+To see log meassages from this boot 
+`journalctl -b`
+
+To see all the logs from a unit 
+`journalctl -u <service-name>`
 
