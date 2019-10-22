@@ -77,6 +77,13 @@ N.B: when on the man pages and you would like to search by a keyword. Click '/<s
 `mkdir path/{dir1,dir2}`
 This will create dir1 and dir2 on the path you specify. Note that there are no spaces allowed. 
 
+`cmd 2>&1` 
+`cmd &> output.txt`
+To redirect stderror to stdout
+
+`cmd 2> /dev/null`
+To ignore error
+
 ## Archiving and/or Compression
 
 `tar -cf <For_Name> <dirPath>`
@@ -321,6 +328,22 @@ To show human readble space usage of a devive
 
 To see all the block storage 
 `lsblk`
+
+partitioning tool interactive
+`sudo fdisk /dev/sda`
+
+displays partition information
+`sudo parted -l`
+
+
+## Memory 
+
+To see all the Dirty cache 
+`cat /proc/meminfo`
+
+To write cache to disk
+`sync`
+
 
 ## Systemd 
 
